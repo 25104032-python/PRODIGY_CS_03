@@ -69,4 +69,3 @@ Hello@123
 Output:
 Password Strength: Very Strong Password
 
-Cyber Security Internship at Prodigy InfoTech
