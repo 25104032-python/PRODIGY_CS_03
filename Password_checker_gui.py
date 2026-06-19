@@ -10,31 +10,31 @@ def check_password_strength(password):
     if len(password) >= 8:
         score += 1
     else:
-        feedback.append("❌ At least 8 characters required")
+        feedback.append("At least 8 characters required")
 
     # Check uppercase
     if re.search(r'[A-Z]', password):
         score += 1
     else:
-        feedback.append("❌ Add uppercase letter (A-Z)")
+        feedback.append("Add uppercase letter (A-Z)")
 
     # Check lowercase
     if re.search(r'[a-z]', password):
         score += 1
     else:
-        feedback.append("❌ Add lowercase letter (a-z)")
+        feedback.append("Add lowercase letter (a-z)")
 
     # Check numbers
     if re.search(r'[0-9]', password):
         score += 1
     else:
-        feedback.append("❌ Add a number (0-9)")
+        feedback.append("Add a number (0-9)")
 
     # Check special characters
     if re.search(r'[!@#$%^&*(),.?":{}|<>]', password):
         score += 1
     else:
-        feedback.append("❌ Add a special character (!@#$...)")
+        feedback.append("Add a special character (!@#$...)")
 
     return score, feedback
 
@@ -67,15 +67,15 @@ def update_strength(event=None):
     if feedback:
         feedback_label.config(text="\n".join(feedback))
     else:
-        feedback_label.config(text="✅ Perfect! All criteria met!")
+        feedback_label.config(text="Perfect! All criteria met!")
 
 def toggle_password():
     if entry.cget('show') == '*':
         entry.config(show='')
-        toggle_btn.config(text="🙈 Hide")
+        toggle_btn.config(text=" Hide")
     else:
         entry.config(show='*')
-        toggle_btn.config(text="👁 Show")
+        toggle_btn.config(text="Show")
 
 # ── GUI Setup ──────────────────────────────────────
 root = tk.Tk()
@@ -92,7 +92,7 @@ progress_style.configure("TProgressbar",
                           thickness=20)
 
 # Title
-tk.Label(root, text="🔐 Password Strength Checker",
+tk.Label(root, text="Password Strength Checker",
          font=("Helvetica", 16, "bold"),
          bg="#1a1a2e", fg="#00d4ff").pack(pady=20)
 
